@@ -31,7 +31,7 @@ class Student
       WHERE name = ?
       LIMIT 1
     SQL
-    row = DB[:conn].execute(sql)
+    row = DB[:conn].execute(sql, name).flatten
       self.new_from_db(row)
   end
 
